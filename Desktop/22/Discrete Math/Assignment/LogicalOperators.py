@@ -1,6 +1,16 @@
 from collections import defaultdict
 
 def evaluate(string):
+    mymap = {" ":"",
+            "not":"!", "~": "!", 
+            "and" : "&", "xor":"^" ,"or": "|",
+            "biimplies": "<", "<=>":"<",
+            "implies":">" , "=>":">" , "->":">"
+            }
+
+    for key,value in mymap.items():
+        string = string.replace(key,value)
+        
     symbols = defaultdict(list)  
 
     for i in range(len(string)):
@@ -23,13 +33,13 @@ def evaluate(string):
         if len(symbols[7]) != 0:
             # to know where our parenthesis start and end
             idx = symbols[7][0] + 1
-            real = 1
-            count = 0
-            while count < real:
+            openbracket = 1
+            closebracket = 0
+            while closebracket < openbracket:
                 if string[idx] == ')':
-                    count += 1
+                    closebracket += 1
                 elif string[idx] == '(':
-                    real += 1
+                    openbracket += 1
                 idx += 1
             
             # after finding our parenthesis evaluate inside the parenthesis and assign it to val
@@ -68,3 +78,56 @@ def evaluate(string):
                 return 1
             else : return 0
 
+def minterms(values):
+    exp = ""
+    for i in range(len(values)):
+        if i == len(values) - 1:
+            if values[i] == True:
+                exp += str(int(values[i]))
+            else:
+                complement = "!" + str(int(values[i]))
+                exp += str(evaluate(complement))
+        else:
+            if values[i] == True:
+                exp += str(int(values[i]))
+                exp += "&"
+            else:
+                complement = "!" + str(int(values[i]))
+                exp += str(evaluate(complement))
+                exp += "&"
+
+    return evaluate(exp)
+
+def maxterms(values):
+    exp = ""
+    for i in range(len(values)):
+        if i == len(values) - 1:
+            if values[i] == False:
+                exp += str(int(values[i]))
+            else:
+                complement = "!" + str(int(values[i]))
+                exp += str(evaluate(complement))
+        else:
+            if values[i] == False:
+                exp += str(int(values[i]))
+                exp += "|"
+            else:
+                complement = "!" + str(int(values[i]))
+                exp += str(evaluate(complement))
+                exp += "|"
+        
+    return evaluate(exp)
+
+def SOP(table,expression):
+    arr = []
+    for row in range(1,len(table)): 
+        if table[row][-1] == 1:
+            arr.append(row)
+    print("SOP(",expression," ) = Summation",arr)
+
+def POS(table,expression):
+    arr = []
+    for row in range(1,len(table)):
+        if table[row][-1] == 0:
+            arr.append(row)
+    print("POS(",expression,") = Product",arr)
