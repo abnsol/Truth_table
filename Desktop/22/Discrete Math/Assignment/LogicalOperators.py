@@ -1,8 +1,9 @@
 from collections import defaultdict
 
 def evaluate(string):
+    # replaces to the correct symbol
     mymap = {" ":"",
-            "not":"!", "~": "!", 
+            "negation": "!","not":"!", "~": "!", 
             "and" : "&", "xor":"^" ,"or": "|",
             "biimplies": "<", "<=>":"<",
             "implies":">" , "=>":">" , "->":">"
@@ -28,8 +29,8 @@ def evaluate(string):
     # evaluating using recursion
     if len(string) == 1:
         return int(string)
+    
     else:
-
         if len(symbols[7]) != 0:
             # to know where our parenthesis start and end
             idx = symbols[7][0] + 1
@@ -118,16 +119,59 @@ def maxterms(values):
         
     return evaluate(exp)
 
-def SOP(table,expression):
+def SOP(table,variables):
     arr = []
-    for row in range(1,len(table)): 
-        if table[row][-1] == 1:
-            arr.append(row)
-    print("SOP(",expression," ) = Summation",arr)
+    for i in range(1,len(table)): 
+        row = table[i]
+        if row[-1] == 1:
+            temp = []
+            for j in range(len(row) - 3):
+                var = variables[j]
+                if row[j] == 0:
+                    temp.append(f"! {var}")
+                else:
+                    temp.append(var)
+            arr.append(" & ".join(temp))
+                
+    
+    sop = ""            
+    idx = 0
+    while idx < len(arr) - 1:
+        sop += f'({arr[idx]}) | '
+        idx += 1
 
-def POS(table,expression):
+    if len(arr) > 0:
+        sop += f'({arr[idx]})'
+
+    if len(sop) > 0:
+        print("SOP => " + sop)
+    else:
+        print("SOP => empty")
+
+
+def POS(table,variables):
     arr = []
-    for row in range(1,len(table)):
-        if table[row][-1] == 0:
-            arr.append(row)
-    print("POS(",expression,") = Product",arr)
+    for i in range(1,len(table)):
+        row = table[i] 
+        if row[-1] == 0:
+            temp = []
+            for j in range(len(row) - 3):
+                var = variables[j]
+                if row[j] == 1:
+                    temp.append(f"! {var}")
+                else:
+                    temp.append(var)
+            arr.append(" | ".join(temp))
+
+    pos = ""            
+    idx = 0
+    while idx < len(arr) - 1:
+        pos += f'({arr[idx]}) & '
+        idx += 1
+    if len(arr) > 0:
+        pos += f'({arr[idx]})'       
+    
+    if len(pos) > 0:
+        print("POS => " + pos)
+    else:
+        print("POS => empty")
