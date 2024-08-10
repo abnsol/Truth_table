@@ -1,0 +1,199 @@
+*, *::before, *::after {
+    box-sizing: border-box; /*1. Use a more-intuitive box-sizing model.*/
+}
+
+* {
+    margin: 0; /* 2. Remove default margin */
+}
+
+body {
+    line-height: 1.5; /* Typographic tweaks! 3. Add accessible line-height  4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    font-family: "roboto";
+}
+
+img, picture, video, canvas, svg { /* 5. Improve media defaults */
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select { /* 6. Remove built-in form typography styles */
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 { /*7. Avoid text overflows */
+    overflow-wrap: break-word;
+}
+
+#root, #__next { /* 8. Create a root stacking context */
+    isolation: isolate;
+}
+
+
+
+#header{
+    display: flex;
+    min-width: 100%;
+    justify-content: space-between;
+    position: sticky;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(226, 226, 226);
+}
+
+#brand{
+    font-size: 1.2rem;
+    display: flex;
+    gap: 5px;
+}
+
+#logo{
+    width: 30px;
+    height: 30px;
+}
+
+#header ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    padding: 10px;
+    margin-right:100px ;
+}   
+
+/* div{
+    border: 1px solid red;
+} */
+
+#main{
+    flex:1;
+    display: flex;
+    align-items: stretch;
+}
+
+#rules{
+    flex: 1;
+}
+
+#contents{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    padding-left: 50px;
+    gap: 20px;
+}
+
+#title{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+#form,#table{
+    display: flex;
+    min-width: 50%;
+    min-height: 1rem;
+    box-shadow: 0 0 10px rgb(226, 226, 226);
+    border: none;
+    border-radius: 15px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    min-width: 100%;
+}
+
+#exp{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 100%;
+}
+
+label{
+    font-size: 0.7rem;
+}
+
+#expression{
+    display: flex;
+    min-width: 100%;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 30px;
+    min-height: 30px;
+    font-size: 0.8rem;
+    padding-left: 10px;
+}
+
+#expression:focus{
+    outline: none;
+}
+
+#button{
+    min-width: 90%;
+}
+
+button{
+    min-width: 100%;
+    min-height: 30px;
+    border-radius:30px;
+    border: none;
+    background-color: red;
+    color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+#footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70px;
+    font-size: 1.2rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px rgb(207, 207, 207);
+}
+
+#footer a{
+    color:  rgb(182, 179, 179);
+}
+
+a{
+    text-decoration: none;
+}
+
+#header a{
+    color: black;
+}
+
+#rules{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    font-size: 0.7rem;
+    border-right: 1px solid rgb(182, 179, 179);
+}
+
+#rules ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#table{
+    min-height: 20%;
+    display: flex;
+    padding: 15px;
+    font-size: 0.7rem;
+}

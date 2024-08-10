@@ -1,0 +1,158 @@
+*, *::before, *::after {
+    box-sizing: border-box; /*1. Use a more-intuitive box-sizing model.*/
+}
+
+* {
+    margin: 0; /* 2. Remove default margin */
+}
+
+body {
+    line-height: 2; /* Typographic tweaks! 3. Add accessible line-height  4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    font-family: "roboto";
+}
+
+img, picture, video, canvas, svg { /* 5. Improve media defaults */
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select { /* 6. Remove built-in form typography styles */
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 { /*7. Avoid text overflows */
+    overflow-wrap: break-word;
+}
+
+#root, #__next { /* 8. Create a root stacking context */
+    isolation: isolate;
+}
+
+#header{
+    display: flex;
+    min-width: 100%;
+    justify-content: space-between;
+    position:sticky;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(226, 226, 226);
+    top:0;
+    background-color: white;
+}
+
+
+#brand{
+    font-size: 1.2rem;
+    display: flex;
+    gap: 5px;
+}
+
+#logo{
+    width: 40px;
+    height: 40px;
+}
+
+#header ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    padding: 10px;
+    margin-right:100px ;
+}   
+
+#main{
+    flex:1;
+    display: flex;
+    align-items: stretch;
+}
+
+
+
+#footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70px;
+    font-size: 1.2rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px rgb(207, 207, 207);
+}
+
+#footer a{
+    color:  rgb(182, 179, 179);
+}
+
+a{
+    text-decoration: none;
+}
+
+#header a{
+    color: black;
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#msg{
+    max-inline-size: 70ch;
+    font-size: 1rem;
+    box-shadow: 0 0 5px rgb(231, 231, 231);
+    padding: 20px;
+    flex: 4;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+#message{
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+/* div{
+    border: 1px solid red;
+}  */
+
+#left,#right{
+    flex: 1;
+}
+
+#intro{
+    display: flex;
+    min-height: 90vh;
+    background-color: rgb(156, 188, 247);
+
+    background: url(../images/intro-bg.jpg) 0px -200px/cover no-repeat scroll;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+#feedback{
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin: 40px;
+    background-color: rgb(196, 196, 196);
+    min-width: 100%;
+    margin-left: 0px;
+    padding: 50px;
+}
+
+#feedback div{
+    min-width: 25%;
+    min-height: 12rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(136, 136, 136);
+}
