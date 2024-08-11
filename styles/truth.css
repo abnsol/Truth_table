@@ -65,9 +65,9 @@ p, h1, h2, h3, h4, h5, h6 { /*7. Avoid text overflows */
     margin-right:100px ;
 }   
 
-/* div{
-    border: 1px solid red;
-} */
+#header a{
+    color: black;
+}
 
 #main{
     flex:1;
@@ -77,6 +77,19 @@ p, h1, h2, h3, h4, h5, h6 { /*7. Avoid text overflows */
 
 #rules{
     flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    font-size: 0.7rem;
+    border-right: 1px outset rgb(182, 179, 179);
+}
+
+#rules ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 #contents{
@@ -100,7 +113,7 @@ p, h1, h2, h3, h4, h5, h6 { /*7. Avoid text overflows */
     display: flex;
     min-width: 50%;
     min-height: 1rem;
-    box-shadow: 0 0 10px rgb(226, 226, 226);
+    box-shadow: 0 0 5px rgb(172, 159, 159);
     border: none;
     border-radius: 15px;
 }
@@ -164,30 +177,12 @@ button{
 }
 
 #footer a{
-    color:  rgb(182, 179, 179);
+    color:  rgb(61, 59, 59);
+    margin: 10px;
 }
+
 a{
     text-decoration: none;
-}
-
-#header a{
-    color: black;
-}
-
-#rules{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 20px;
-    font-size: 0.7rem;
-    border-right: 1px solid rgb(182, 179, 179);
-}
-
-#rules ul{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 
 #table{
