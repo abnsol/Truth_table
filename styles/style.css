@@ -81,11 +81,12 @@ p, h1, h2, h3, h4, h5, h6 { /*7. Avoid text overflows */
     min-height: 70px;
     font-size: 1.2rem;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 5px rgb(207, 207, 207);
+    box-shadow: 0 0 5px rgb(99, 95, 95);
 }
 
 #footer a{
-    color:  rgb(182, 179, 179);
+    color:  rgb(61, 59, 59);
+    margin: 10px;
 }
 
 a{
