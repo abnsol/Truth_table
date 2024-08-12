@@ -9,12 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Skranji:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Skranji:wght@400;700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <script defer src="../script.js"></script>
 </head>
 <body>
     <div id="header">
         <div id="brand">
             <div id="logo"><img src="../images/logo.png" alt=""></div>
-            Truth Table Gen
+            Logic Lab
         </div>
         <div id="navbars">
             <ul>
@@ -26,19 +28,21 @@
     </div>
     <div id="main">
         <div id="rules">
-            <div id="title">Rules:</div>
-            <div id="lists">
-                <ul>
-                    <li> For Negation -> negation , not, ~ , !</li>
-                    <li>For Conjunction -> and , &</li>
-                    <li>For Disjunction -> or , |</li>
-                    <li>For ExclusiveOR -> xor , ^</li>
-                    <li>For Implication -> implies , =>, -></li>
-                    <li>For Biimplication -> biimplies , <=> , ==</li>
-                    <li>The program supports any number of inputs including parenthesis.</li>
-                </ul>
+            <div class="btn"><img src="../images/menu.svg"></div>
+            <div id="collapsable">
+                <div id="title">Guide:</div>
+                <div id="lists">
+                    <ul>
+                        <li> For Negation use (negation, not,~ ,!)</li>
+                        <li>For Conjunction use (and, &)</li>
+                        <li>For Disjunction use (or, |)</li>
+                        <li>For ExclusiveOR use (xor, ^)</li>
+                        <li>For Implication use (implies, =>, ->)</li>
+                        <li>For Biimplication use (biimplies, <=>, ==)</li>
+                        <li>The program supports any number of inputs including parenthesis.</li>
+                    </ul>
+                </div>
             </div>
-
         </div>
         <div id="contents">
             <div id="title">
