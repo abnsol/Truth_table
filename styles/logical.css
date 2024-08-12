@@ -46,9 +46,11 @@ p, h1, h2, h3, h4, h5, h6 { /*7. Avoid text overflows */
 }
 
 #brand{
+    font-family: "Teko";
     font-size: 1.2rem;
+    font-weight: 600;
     display: flex;
-    gap: 5px;
+    gap: 5px;    
 }
 
 #logo{
@@ -82,7 +84,6 @@ p, h1, h2, h3, h4, h5, h6 { /*7. Avoid text overflows */
     align-items: stretch;
     gap: 20px;
     font-size: 0.7rem;
-    border-right: 1px outset rgb(182, 179, 179);
     flex:1;
 }
 
@@ -190,4 +191,28 @@ a{
     display: flex;
     padding: 15px;
     font-size: 0.7rem;
+}
+
+#collapsable {
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+    box-shadow: 0 0 2px #999898;
+    border-radius: 10px;
+    margin-top: 40px;
+    max-height: 0;
+}
+
+#collapsable.expanded {
+    min-height: 420px;
+    flex: 1;
+}
+
+#collapsable div {
+    padding: 10px;
+}
+
+.btn{
+    position: absolute;
+    width: 30px;
+    height: 10px;
 }
